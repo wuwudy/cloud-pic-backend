@@ -12,7 +12,7 @@ public class BusinessException extends RuntimeException{
 
     /**
      *
-     * @param code 自定义错误码
+     * @param code 自定义状态码
      * @param message 自定义信息
      */
     public BusinessException(int code, String message) {
@@ -22,20 +22,20 @@ public class BusinessException extends RuntimeException{
 
     /**
      * 
-     * @param errorCode 通用错误码
+     * @param statusCode 通用状态码
      */
-    public BusinessException(ErrorCode errorCode) {
-        super(errorCode.getMessage());
-        this.code = errorCode.getCode();
+    public BusinessException(StatusCode statusCode) {
+        super(statusCode.getMessage());
+        this.code = statusCode.getCode();
     }
 
     /**
      *
-     * @param errorCode 通用错误码
+     * @param statusCode 通用状态码
      * @param message 详细自定义信息
      */
-    public BusinessException(ErrorCode errorCode, String message) {
+    public BusinessException(StatusCode statusCode, String message) {
         super(message);
-        this.code = errorCode.getCode();
+        this.code = statusCode.getCode();
     }
 }

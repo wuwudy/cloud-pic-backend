@@ -28,19 +28,19 @@ public class ThrowUtils {
     }
 
     /**
-     * 依据条件抛出带有通用错误码的、自定义消息的业务异常
+     * 依据条件抛出带有通用状态码的、自定义消息的业务异常
      * @param condition 判断条件
-     * @param errorCode 通用错误码
+     * @param statusCode 通用状态码
      * @param message 自定义消息
      */
-    public static void throwIf(boolean condition, ErrorCode errorCode, String message) {
-        throwIf(condition,new BusinessException(errorCode, message));
+    public static void throwIf(boolean condition, StatusCode statusCode, String message) {
+        throwIf(condition,new BusinessException(statusCode, message));
     }
 
     /**
-     * 依据条件抛出带有自定义错误码的、自定义消息的业务异常
+     * 依据条件抛出带有自定义状态码的、自定义消息的业务异常
      * @param condition 判断条件
-     * @param code 自定义错误码
+     * @param code 自定义状态码
      * @param message 自定义消息
      */
     public static void throwIf(boolean condition, int code, String message) {

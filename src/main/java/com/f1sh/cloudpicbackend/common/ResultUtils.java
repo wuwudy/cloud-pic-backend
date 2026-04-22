@@ -1,6 +1,6 @@
 package com.f1sh.cloudpicbackend.common;
 
-import com.f1sh.cloudpicbackend.exception.ErrorCode;
+import com.f1sh.cloudpicbackend.exception.StatusCode;
 
 /**
  * 返回响应结果 工具类
@@ -18,25 +18,25 @@ public class ResultUtils {
 
     /**
      * 错误返回
-     * @param errorCode 通用错误码枚举类
+     * @param statusCode 通用状态码枚举类
      * @param message 自定义错误消息
      * @return 错误响应
      */
-    public static BaseResponse<?> error(ErrorCode errorCode, String message) {
-        return new BaseResponse<>(errorCode.getCode(), null, message);
+    public static BaseResponse<?> error(StatusCode statusCode, String message) {
+        return new BaseResponse<>(statusCode.getCode(), null, message);
     }
     /**
      * 错误返回
-     * @param errorCode 通用错误码枚举类
+     * @param statusCode 通用状态码枚举类
      * @return 错误响应
      */
-    public static BaseResponse<?> error(ErrorCode errorCode) {
-        return new BaseResponse<>(errorCode.getCode(), null, errorCode.getMessage());
+    public static BaseResponse<?> error(StatusCode statusCode) {
+        return error(statusCode, statusCode.getMessage());
     }
 
     /**
      * 错误返回
-     * @param code 自定义错误码
+     * @param code 自定义状态码
      * @param message 自定义错误消息
      * @return 错误响应
      */

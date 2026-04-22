@@ -1,6 +1,6 @@
 package com.f1sh.cloudpicbackend.common;
 
-import com.f1sh.cloudpicbackend.exception.ErrorCode;
+import com.f1sh.cloudpicbackend.exception.StatusCode;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -33,7 +33,7 @@ public class BaseResponse<T> implements Serializable {
     }
 
     /**
-     * 缺失message(默认"")构造
+     * 缺失message(默认"")构造·
      * @param code 自定义状态码
      * @param data 响应数据
      */
@@ -42,10 +42,10 @@ public class BaseResponse<T> implements Serializable {
     }
 
     /**
-     * 通用错误码枚举类构造，响应数据默认null
-     * @param errorCode 通用错误码枚举类
+     * 通用状态码枚举类构造，响应数据默认null
+     * @param statusCode 通用状态码枚举类
      */
-    public BaseResponse(ErrorCode errorCode) {
-        this(errorCode.getCode(), null, errorCode.getMessage());
+    public BaseResponse(StatusCode statusCode) {
+        this(statusCode.getCode(), null, statusCode.getMessage());
     }
 }
