@@ -6,7 +6,7 @@ import lombok.Getter;
  * 错通用误码枚举类
  */
 @Getter
-public enum StatusCode {
+public enum StateCode {
 
     SUCCESS(20000,"ok"),
     PARAMS_ERROR(40000,"参数错误"),
@@ -27,7 +27,7 @@ public enum StatusCode {
      */
     private final String message;
 
-    StatusCode(int code, String message){
+    StateCode(int code, String message){
         this.code = code;
         this.message = message;
     }
