@@ -22,20 +22,20 @@ public class BusinessException extends RuntimeException{
 
     /**
      * 
-     * @param statusCode 通用状态码
+     * @param stateCode 通用状态码
      */
-    public BusinessException(StatusCode statusCode) {
-        super(statusCode.getMessage());
-        this.code = statusCode.getCode();
+    public BusinessException(StateCode stateCode) {
+        super(stateCode.getMessage());
+        this.code = stateCode.getCode();
     }
 
     /**
      *
-     * @param statusCode 通用状态码
+     * @param stateCode 通用状态码
      * @param message 详细自定义信息
      */
-    public BusinessException(StatusCode statusCode, String message) {
+    public BusinessException(StateCode stateCode, String message) {
         super(message);
-        this.code = statusCode.getCode();
+        this.code = stateCode.getCode();
     }
 }
