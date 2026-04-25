@@ -1,14 +1,13 @@
 package com.f1sh.cloudpicbackend.model.vo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
-public class LoginUserVO {
+public class LoginUserVO implements Serializable {
+    private static final long serialVersionUID = 1845908192936526586L;
     /**
      * id
      */

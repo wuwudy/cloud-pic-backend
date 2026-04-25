@@ -1,10 +1,14 @@
 package com.f1sh.cloudpicbackend.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.f1sh.cloudpicbackend.model.dto.UserQueryRequest;
 import com.f1sh.cloudpicbackend.model.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.f1sh.cloudpicbackend.model.vo.LoginUserVO;
+import com.f1sh.cloudpicbackend.model.vo.UserVO;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * @author 28060
@@ -60,4 +64,28 @@ public interface UserService extends IService<User> {
      * @return 是否注销成功
      */
     boolean userLogout(HttpServletRequest request);
+
+    /**
+     * 根据用户信息获取用户VO
+     *
+     * @param user 用户信息
+     * @return 用户VO
+     */
+    UserVO getUserVO(User user);
+
+    /**
+     * 根据用户列表获取用户VO列表
+     *
+     * @param userList 用户列表
+     * @return 用户VO列表
+     */
+    List<UserVO> getUserVOList(List<User> userList);
+
+    /**
+     * 将用户查询条件转换为查询Wrapper
+     *
+     * @param userQueryRequest 查询条件
+     * @return 查询Wrapper
+     */
+    QueryWrapper<User> getQueryWrapper(UserQueryRequest userQueryRequest);
 }
